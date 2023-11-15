@@ -99,6 +99,8 @@ const energy5 = new EnergyDrink("NOCCO", "Juicy Melba", 33, 22.95);
 
 const energyDrinks = [energy, energy2, energy3, energy4, energy5];
 
+
+
 console.log(energyDrinks);
 
 const theApp = document.getElementById("app3");
@@ -106,7 +108,10 @@ const drinksContainer = document.createElement("article");
 drinksContainer.className = "drinkscontainer";
 theApp.appendChild(drinksContainer);
 
-energyDrinks.forEach((drink) => {
+const energyDrinksCreateHTML = () => {
+  drinksContainer.innerHTML = "";
+
+  energyDrinks.forEach((drink, i) => {
     const drinkContainer = document.createElement("section");
     const titles = document.createElement("section");
     const brand = document.createElement("h3");
@@ -130,6 +135,30 @@ energyDrinks.forEach((drink) => {
     details.appendChild(size);
     details.appendChild(price);
     drinksContainer.appendChild(drinkContainer);
-});
 
+    drinkContainer.addEventListener("click", () => {
+      energyDrinks.splice(i, 1);
+      energyDrinksCreateHTML();
+    })
+  })
+}
+
+energyDrinksCreateHTML();
+
+// const drinkInputContainer = document.createElement("article");
+// drinkInputContainer.className = "drinkinput";
+// const brandInput = document.createElement("input");
+// const flavourInput = document.createElement("input");
+// const sizeInput = document.createElement("input");
+// const priceInput = document.createElement("input");
+// const drinkButton = document.createElement("button");
+// drinkButton.innerHTML = "Lägg till dryck";
+
+// drinkInputContainer.appendChild(brandInput);
+// drinkInputContainer.appendChild(flavourInput);
+// drinkInputContainer.appendChild(sizeInput);
+// drinkInputContainer.appendChild(priceInput);
+// drinkInputContainer.appendChild(drinkButton);
+
+// theApp.appendChild(drinkInputContainer);
 
