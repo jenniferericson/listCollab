@@ -19,7 +19,7 @@ const catForm = document.createElement("form");
 
 
 function renderCats(){
-    app.innerHTML = "";
+    list.innerHTML = "";
     for (let i = 0; i < cats.length; i++) {
         const listItem = document.createElement("li");
         listItem.className = "listedCat";
