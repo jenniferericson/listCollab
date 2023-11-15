@@ -11,9 +11,36 @@ const energy5 = new EnergyDrink("NOCCO", "Juicy Melba", 33, 22.95);
 
 const energyDrinks = [energy, energy2, energy3, energy4, energy5];
 
-
 console.log(energyDrinks);
 
+const theApp = document.getElementById("app");
+const drinksContainer = document.createElement("article");
+drinksContainer.className = "drinkscontainer";
+theApp.appendChild(drinksContainer);
 
+energyDrinks.forEach((drink) => {
+    const drinkContainer = document.createElement("section");
+    const header = document.createElement("section");
+    const brand = document.createElement("h3");
+    const flavour = document.createElement("h4");
+    const details = document.createElement("section");
+    const size = document.createElement("span");
+    const price = document.createElement("span");
+
+    drinkContainer.className = "drinkcontainer";
+    header.className = "titles";
+    brand.innerHTML = drink.brand;
+    flavour.innerHTML = drink.flavour;
+    size.innerHTML = drink.size + " cl";
+    price.innerHTML = drink.price + " kr";
+
+    drinkContainer.appendChild(header);
+    header.appendChild(brand);
+    header.appendChild(flavour);
+    drinkContainer.appendChild(details);
+    details.appendChild(size);
+    details.appendChild(price);
+    drinksContainer.appendChild(drinkContainer);
+});
 
 
