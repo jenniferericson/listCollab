@@ -2,6 +2,7 @@ import "./../scss/style.scss"
 import { Cat } from "./modules/Cat"
 import { Skincare } from "./modules/skincare"
 import { EnergyDrink } from "./modules/EnergyDrink"
+import { render } from "sass";
 
 
 const app = document.getElementById("app2");
@@ -19,7 +20,7 @@ const catForm = document.createElement("form");
 
 
 function renderCats(){
-    app.innerHTML = "";
+    list.innerHTML = "";
     for (let i = 0; i < cats.length; i++) {
         const listItem = document.createElement("li");
         listItem.className = "listedCat";
@@ -40,28 +41,45 @@ function renderCats(){
 }
 renderCats();
 
-/*
-const nameLabel = docmuent.createElement("label");
+
+const nameLabel = document.createElement("label");
+nameLabel.innerHTML = "Cat name";
 const newCatName = document.createElement("input");
 
-const newCatBreedLabel = docmuent.createElement("label");
+const newCatBreedLabel = document.createElement("label");
+newCatBreedLabel.innerHTML="Breed";
 const newCatBreed = document.createElement("input");
 
-const newCatFurColorLabel = docmuent.createElement("label");
+const newCatFurColorLabel = document.createElement("label");
+newCatFurColorLabel.innerHTML="Fur Color";
 const newCatFurColor = document.createElement("input");
 
-const newCatEyeColorLabel = docmuent.createElement("label");
+const newCatEyeColorLabel = document.createElement("label");
+newCatEyeColorLabel.innerHTML="Eye color";
 const newCatEyeColor = document.createElement("input");
 
 const addCat = document.createElement("button");
+addCat.type="button";
+
 addCat.innerHTML = "Add cat";
+catForm.appendChild(nameLabel);
 catForm.appendChild(newCatName);
+catForm.appendChild(newCatBreedLabel);
 catForm.appendChild(newCatBreed);
+catForm.appendChild(newCatFurColorLabel);
 catForm.appendChild(newCatFurColor);
+catForm.appendChild(newCatEyeColorLabel);
 catForm.appendChild(newCatEyeColor);
 catForm.appendChild(addCat)
 app.appendChild(catForm);
-*/
+
+addCat.addEventListener("click", () =>{
+    const tempCat = new Cat(newCatName.value, newCatBreed.value,newCatFurColor.value,newCatEyeColor.value);
+    cats.push(tempCat);
+    renderCats();
+})
+
+
 
 const productOne = new Skincare("Paulas Choice", "BHA", "100 ml", 599);
 
