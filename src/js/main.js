@@ -64,14 +64,22 @@ const products = [productOne,productTwo,productThree,productFour];
 
 const divApp = document.getElementById("app");
 
-for(let i = 0; i < products.length; i++) {
+const changeList = () => {
+  divApp.innerHTML = "";
 
+for(let i = 0; i < products.length; i++) {
   let brandTag = document.createElement("h3");
   let typeTag = document.createElement("h4");
   let sizeTag = document.createElement("p");
   let priceTag = document.createElement("p");
   const container = document.createElement("div");
 
+
+  container.addEventListener("click", () => {
+    products.splice(i,1);
+    changeList();
+  })
+ 
   brandTag.innerHTML = products[i].brand;
   typeTag.innerHTML = products[i].type;
   sizeTag.innerHTML = products[i].size;
@@ -85,9 +93,9 @@ for(let i = 0; i < products.length; i++) {
   
   container.className = "productContainer";
 }
+}
 
-
-
+changeList();
 
 
 const energy = new EnergyDrink("Red Bull", "Original", 35.5, 18.95);
