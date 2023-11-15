@@ -79,7 +79,10 @@ const drinksContainer = document.createElement("article");
 drinksContainer.className = "drinkscontainer";
 theApp.appendChild(drinksContainer);
 
-energyDrinks.forEach((drink) => {
+const energyDrinksCreateHTML = () => {
+  drinksContainer.innerHTML = "";
+  
+  energyDrinks.forEach((drink, i) => {
     const drinkContainer = document.createElement("section");
     const titles = document.createElement("section");
     const brand = document.createElement("h3");
@@ -103,6 +106,14 @@ energyDrinks.forEach((drink) => {
     details.appendChild(size);
     details.appendChild(price);
     drinksContainer.appendChild(drinkContainer);
-});
+
+    drinkContainer.addEventListener("click", () => {
+      energyDrinks.splice(i, 1);
+      energyDrinksCreateHTML();
+    })
+  })
+}
+
+energyDrinksCreateHTML();
 
 
