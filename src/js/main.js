@@ -39,7 +39,7 @@ const divApp = document.getElementById("app");
 
 const changeList = () => {
   divApp.innerHTML = "";
-  
+
 for(let i = 0; i < products.length; i++) {
   let brandTag = document.createElement("h3");
   let typeTag = document.createElement("h4");
