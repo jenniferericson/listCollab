@@ -15,16 +15,29 @@ const cat5 = new Cat("Zelda", "Barn Cat", "White and Black", "Yellow");
 const cats = [cat1, cat2, cat3, cat4, cat5];
 
 const list = document.createElement("ul");
-for (let i = 0; i < cats.length; i++) {
-    const listItem = document.createElement("li");
-    listItem.className = "listedCat";
-    //listItem.className="cat" + i;
-    listItem.innerHTML = (cats[i].toString());
-    list.appendChild(listItem);
-    app.appendChild(list);
 
+function renderCats(){
+    list.innerHTML = "";
+    for (let i = 0; i < cats.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.className = "listedCat";
+        //listItem.className="cat" + i;
+        listItem.innerHTML = (cats[i].toString());
+        list.appendChild(listItem);
+        app.appendChild(list);
+    
+    
+     const removeButton = document.createElement("button");
+     removeButton.innerHTML="remove";
+     removeButton.addEventListener("click", ()=>{
+        cats.splice(i,1);
+        renderCats();
+     })
+     listItem.appendChild(removeButton);
+    }
 }
 
+renderCats();
 const productOne = new Skincare("Paulas Choice", "BHA", "100 ml", 599);
 
 const productTwo = new Skincare("Aco", "Moisturizer", "50 ml", 299);
