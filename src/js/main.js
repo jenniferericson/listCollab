@@ -17,7 +17,7 @@ const cats = [cat1, cat2, cat3, cat4, cat5];
 const list = document.createElement("ul");
 
 function renderCats(){
-    list.innerHTML = "";
+    app.innerHTML = "";
     for (let i = 0; i < cats.length; i++) {
         const listItem = document.createElement("li");
         listItem.className = "listedCat";
