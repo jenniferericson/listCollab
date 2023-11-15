@@ -127,18 +127,16 @@ for(let i = 0; i < products.length; i++) {
 changeList();
 
 
+
+
+// =========== ENERGIDRYCKER ===========
 const energy = new EnergyDrink("Red Bull", "Original", 35.5, 18.95);
 const energy2 = new EnergyDrink("Red Bull", "Blue", 25, 15.95);
 const energy3 = new EnergyDrink("Monster", "Ultra Zero", 50, 19.95);
 const energy4 = new EnergyDrink("PowerKing", "Watermelon", 25, 9.95);
 const energy5 = new EnergyDrink("NOCCO", "Juicy Melba", 33, 22.95);
 
-
 const energyDrinks = [energy, energy2, energy3, energy4, energy5];
-
-
-
-console.log(energyDrinks);
 
 const theApp = document.getElementById("app3");
 const drinksContainer = document.createElement("article");
@@ -182,20 +180,43 @@ const energyDrinksCreateHTML = () => {
 
 energyDrinksCreateHTML();
 
-// const drinkInputContainer = document.createElement("article");
-// drinkInputContainer.className = "drinkinput";
-// const brandInput = document.createElement("input");
-// const flavourInput = document.createElement("input");
-// const sizeInput = document.createElement("input");
-// const priceInput = document.createElement("input");
-// const drinkButton = document.createElement("button");
-// drinkButton.innerHTML = "Lägg till dryck";
 
-// drinkInputContainer.appendChild(brandInput);
-// drinkInputContainer.appendChild(flavourInput);
-// drinkInputContainer.appendChild(sizeInput);
-// drinkInputContainer.appendChild(priceInput);
-// drinkInputContainer.appendChild(drinkButton);
+// =========== ENERGIDRYCKER LÄGG TILL ===========
+const drinkInputContainer = document.createElement("article");
+drinkInputContainer.className = "drinkinput";
+const brandInput = document.createElement("input");
+const flavourInput = document.createElement("input");
+const sizeInput = document.createElement("input");
+sizeInput.type = "number";
+const priceInput = document.createElement("input");
+priceInput.type = "number";
+const drinkButton = document.createElement("button");
+drinkButton.type = "button";
+drinkButton.innerHTML = "Lägg till dryck";
+const brandInputLabel = document.createElement("label");
+brandInputLabel.innerHTML = "Märke:";
+const flavourInputLabel = document.createElement("label");
+flavourInputLabel.innerHTML = "Smak:";
+const sizeInputLabel = document.createElement("label");
+sizeInputLabel.innerHTML = "Volym (cl):";
+const priceInputLabel = document.createElement("label");
+priceInputLabel.innerHTML = "Pris (kr):";
 
-// theApp.appendChild(drinkInputContainer);
+drinkInputContainer.appendChild(brandInputLabel);
+drinkInputContainer.appendChild(brandInput);
+drinkInputContainer.appendChild(flavourInputLabel);
+drinkInputContainer.appendChild(flavourInput);
+drinkInputContainer.appendChild(sizeInputLabel);
+drinkInputContainer.appendChild(sizeInput);
+drinkInputContainer.appendChild(priceInputLabel);
+drinkInputContainer.appendChild(priceInput);
+drinkInputContainer.appendChild(drinkButton);
+
+theApp.appendChild(drinkInputContainer);
+
+drinkButton.addEventListener("click", () => {
+  const newDronk = new EnergyDrink(brandInput.value, flavourInput.value, sizeInput.value, priceInput.value);
+  energyDrinks.push(newDronk);
+  energyDrinksCreateHTML();
+})
 

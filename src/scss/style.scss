@@ -36,18 +36,30 @@
   }
 
 
+#app3 {
+  width: 100vw;
+  min-height: 100vh;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.drinkscontainer, .drinkinput {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  font-family: IBM Plex Sans, sans-serif;
+}
 
 .drinkscontainer {
-    width: 100vw;
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    font-family: IBM Plex Sans, sans-serif;
+  gap: 2rem;
 }
 
 .drinkcontainer {
@@ -83,6 +95,7 @@
         h3, h4 {
             margin: 0;
             padding-left: 1rem;
+            text-transform: capitalize;
         }
         
         h3 {
@@ -101,3 +114,4 @@
     }
 
 }
+
