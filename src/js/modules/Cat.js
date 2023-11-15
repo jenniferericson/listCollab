@@ -1,4 +1,4 @@
-export class Cat{
+export class Cat {
     name;
     breed;
     furColor;
@@ -11,10 +11,12 @@ export class Cat{
         this.eyeColor = eyeColor;
     }
 
+    toString() {
+        return "HEWWOO :33 MY NAME IS " + this.name + " AN IM A " + this.breed + " MY FUR IS COLORED " + this.furColor + " AND MY EYES ARE " + this.eyeColor;
+    }
 
 }
-/*
-function Meow(){
-    console.log("MEOW my name is " + name);
+
+function Meow() {
+    console.log("MEOW my name is " + this.name);
 }
-*/

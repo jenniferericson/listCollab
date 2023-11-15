@@ -1,1 +1,7 @@
+.listedCat:nth-child(even){
+    background-color: pink;
+}
 
+.listedCat:nth-child(odd){
+    background-color: plum;
+}
