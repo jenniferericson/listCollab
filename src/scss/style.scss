@@ -1,1 +1,21 @@
+#app {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
 
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+}
+
+.productContainer:hover {
+  background-color: rgb(198, 218, 225);
+}
