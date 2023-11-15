@@ -13,14 +13,14 @@ const energyDrinks = [energy, energy2, energy3, energy4, energy5];
 
 console.log(energyDrinks);
 
-const theApp = document.getElementById("app");
+const theApp = document.getElementById("app3");
 const drinksContainer = document.createElement("article");
 drinksContainer.className = "drinkscontainer";
 theApp.appendChild(drinksContainer);
 
 energyDrinks.forEach((drink) => {
     const drinkContainer = document.createElement("section");
-    const header = document.createElement("section");
+    const titles = document.createElement("section");
     const brand = document.createElement("h3");
     const flavour = document.createElement("h4");
     const details = document.createElement("section");
@@ -28,15 +28,16 @@ energyDrinks.forEach((drink) => {
     const price = document.createElement("span");
 
     drinkContainer.className = "drinkcontainer";
-    header.className = "titles";
+    titles.className = "titles";
+    details.className = "details";
     brand.innerHTML = drink.brand;
     flavour.innerHTML = drink.flavour;
     size.innerHTML = drink.size + " cl";
     price.innerHTML = drink.price + " kr";
 
-    drinkContainer.appendChild(header);
-    header.appendChild(brand);
-    header.appendChild(flavour);
+    drinkContainer.appendChild(titles);
+    titles.appendChild(brand);
+    titles.appendChild(flavour);
     drinkContainer.appendChild(details);
     details.appendChild(size);
     details.appendChild(price);
