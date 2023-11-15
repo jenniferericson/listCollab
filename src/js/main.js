@@ -15,6 +15,8 @@ const cat5 = new Cat("Zelda", "Barn Cat", "White and Black", "Yellow");
 const cats = [cat1, cat2, cat3, cat4, cat5];
 
 const list = document.createElement("ul");
+const catForm = document.createElement("form");
+
 
 function renderCats(){
     app.innerHTML = "";
@@ -36,8 +38,20 @@ function renderCats(){
      listItem.appendChild(removeButton);
     }
 }
-
 renderCats();
+/*
+const newCatName = document.createElement("input");
+const newCatBreed = document.createElement("input");
+const newCatFurColor = document.createElement("input");
+const newCatEyeColor = document.createElement("input");
+const addCat = document.createElement("button");
+catForm.appendChild(newCatName);
+catForm.appendChild(newCatBreed);
+catForm.appendChild(newCatFurColor);
+catForm.appendChild(newCatEyeColor);
+catForm.appendChild(addCat)
+app.appendChild(catForm);
+*/
 const productOne = new Skincare("Paulas Choice", "BHA", "100 ml", 599);
 
 const productTwo = new Skincare("Aco", "Moisturizer", "50 ml", 299);
