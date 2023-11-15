@@ -22,11 +22,17 @@
     background-color: rgb(198, 218, 225);
     
   }.listedCat:nth-child(even){
-      background-color: pink;
+    background: rgb(255,196,252);
+    background: linear-gradient(90deg, rgba(255,196,252,1) 0%, rgba(213,48,247,1) 23%, rgba(125,236,255,1) 50%, rgba(251,183,255,1) 78%, rgba(137,235,255,1) 100%);
   }
   
   .listedCat:nth-child(odd){
-      background-color: plum;
+    background: rgb(196,255,250);
+    background: linear-gradient(90deg, rgba(196,255,250,1) 0%, rgba(246,202,255,1) 23%, rgba(239,164,246,1) 50%, rgba(183,235,255,1) 78%, rgba(177,137,255,1) 100%); 
+  }
+
+  .listedCat:hover{
+    color:pink;
   }
 
 
