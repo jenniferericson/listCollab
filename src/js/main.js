@@ -39,12 +39,22 @@ function renderCats(){
     }
 }
 renderCats();
+
 /*
+const nameLabel = docmuent.createElement("label");
 const newCatName = document.createElement("input");
+
+const newCatBreedLabel = docmuent.createElement("label");
 const newCatBreed = document.createElement("input");
+
+const newCatFurColorLabel = docmuent.createElement("label");
 const newCatFurColor = document.createElement("input");
+
+const newCatEyeColorLabel = docmuent.createElement("label");
 const newCatEyeColor = document.createElement("input");
+
 const addCat = document.createElement("button");
+addCat.innerHTML = "Add cat";
 catForm.appendChild(newCatName);
 catForm.appendChild(newCatBreed);
 catForm.appendChild(newCatFurColor);
@@ -52,6 +62,7 @@ catForm.appendChild(newCatEyeColor);
 catForm.appendChild(addCat)
 app.appendChild(catForm);
 */
+
 const productOne = new Skincare("Paulas Choice", "BHA", "100 ml", 599);
 
 const productTwo = new Skincare("Aco", "Moisturizer", "50 ml", 299);
