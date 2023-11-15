@@ -1,28 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Quando&display=swap');
+
 #app {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-}
-
-.productContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: lightblue;
-  height: 300px;
-  width: 300px;
-  border-radius: 20px;
-}
-
-.productContainer:hover {
-  background-color: rgb(198, 218, 225);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+  }
   
-}.listedCat:nth-child(even){
-    background-color: pink;
+  .productContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+  }
+  
+  .productContainer:hover {
+    background-color: rgb(198, 218, 225);
+    
+  }.listedCat:nth-child(even){
+      background-color: pink;
+  }
+  
+  .listedCat:nth-child(odd){
+      background-color: plum;
+  }
+
+
+
+
+.drinkscontainer {
+    width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    font-family: IBM Plex Sans, sans-serif;
 }
 
-.listedCat:nth-child(odd){
-    background-color: plum;
+.drinkcontainer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background: rgb(201,201,233);
+    background: linear-gradient(0deg, rgba(201,201,233,1) 0%, rgba(255,219,219,1) 100%);
+    overflow: hidden;
+    width: 200px;
+    min-height: 150px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .titles {
+        display: flex;
+        flex-direction: column;
+
+        h3, h4 {
+            margin: 0;
+        }
+        
+        h3 {
+            font-family: Quando, serif;
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
 }
