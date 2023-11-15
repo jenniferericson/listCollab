@@ -18,4 +18,11 @@
 
 .productContainer:hover {
   background-color: rgb(198, 218, 225);
+  
+}.listedCat:nth-child(even){
+    background-color: pink;
+}
+
+.listedCat:nth-child(odd){
+    background-color: plum;
 }
